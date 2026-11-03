@@ -32,7 +32,7 @@ const clean = (v, n = 120) => String(v == null ? "" : v).replace(/[\r\n\t<>]/g, 
 const sha = v => (v ? crypto.createHash("sha256").update(String(v).trim().toLowerCase()).digest("hex") : undefined);
 const EMAIL = /^[A-Za-z0-9._%+'-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 const T = () => AbortSignal.timeout(8000);
-const ALLOWED = /^https:\/\/(www\.)?gaspessential\.com$|^https:\/\/[a-z0-9-]+\.vercel\.app$/i;
+const ALLOWED = /^https:\/\/(www\.)?gaspessential\.com$|^https:\/\/gasp-essential-[a-z0-9-]+\.vercel\.app$|^http:\/\/localhost(:\d+)?$/i;
 const nameNorm = v => String(v || "").toLowerCase().replace(/[^a-z\u00c0-\u024f]/g, "");
 const QUALIFIED = ["10-25", "26-50"];
 // Public, non-secret defaults so the funnel works before any env vars are set. Env vars still win.
@@ -119,7 +119,7 @@ async function sendMail(lead) {
     `Page: ${lead.page || "site"}`,
     `Source URL: ${lead.url || "n/a"}`,
     "",
-    "They were sent to the booking page. Reply to this email to reach them directly."
+    "They were offered times on the page (or the booking link). Reply to this email to reach them directly."
   ];
   const r = await fetch(`https://graph.microsoft.com/v1.0/users/${encodeURIComponent(from)}/sendMail`, {
     method: "POST",
@@ -142,15 +142,15 @@ async function sendMail(lead) {
 module.exports = async (req, res) => {
   if (req.method !== "POST") { res.setHeader("Allow", "POST"); return res.status(405).json({ ok: false }); }
   const origin = String(req.headers.origin || "");
-  if (origin && !ALLOWED.test(origin)) return res.status(403).json({ ok: false });
+  if (!ALLOWED.test(origin)) return res.status(403).json({ ok: false });  // browsers always send Origin on a POST; none means a script
   let b;
   try { b = req.body; } catch { b = null; } // Vercel's body getter throws on malformed JSON
   if (typeof b === "string") { try { b = JSON.parse(b); } catch { b = null; } }
   if (!b || typeof b !== "object") return res.status(400).json({ ok: false, error: "body" });
   const bookingRaw = env("BOOKING_URL") || DEFAULT_BOOKING_URL;
   const booking_url = /^https:\/\//i.test(bookingRaw) ? bookingRaw : null;
-  // honeypot + too-fast submits (under 3 s after page load) are treated as bots: thank them, store nothing
-  if (clean(b.hp_url) || (Number(b.t) > 0 && Number(b.t) < 3000)) return res.status(200).json({ ok: true, booking_url });
+  // honeypot, a missing form timer, or a submit under 3 s after page load = bot: thank them, store nothing (no CAPI, no token)
+  if (clean(b.hp_url) || !(Number(b.t) >= 3000)) return res.status(200).json({ ok: true, booking_url });
 
   const lead = {
     name: clean(b.name, 80), email: clean(b.email, 120).toLowerCase(), phone: clean(b.phone, 30),

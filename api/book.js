@@ -3,12 +3,12 @@
    name and email they already typed, so they never type them twice. Calendar logic lives in _cal.js. */
 const cal = require("./_cal");
 
-const ALLOWED = /^https:\/\/(www\.)?gaspessential\.com$|^https:\/\/[a-z0-9-]+\.vercel\.app$/i;
+const ALLOWED = /^https:\/\/(www\.)?gaspessential\.com$|^https:\/\/gasp-essential-[a-z0-9-]+\.vercel\.app$|^http:\/\/localhost(:\d+)?$/i;
 
 module.exports = async (req, res) => {
   if (req.method !== "POST") { res.setHeader("Allow", "POST"); return res.status(405).json({ ok: false }); }
   const origin = String(req.headers.origin || "");
-  if (origin && !ALLOWED.test(origin)) return res.status(403).json({ ok: false });
+  if (!ALLOWED.test(origin)) return res.status(403).json({ ok: false });  // browsers always send Origin on a POST; none means a script
   let b;
   try { b = req.body; } catch { b = null; }
   if (typeof b === "string") { try { b = JSON.parse(b); } catch { b = null; } }
