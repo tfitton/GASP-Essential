@@ -6,7 +6,7 @@
 const crypto = require("crypto");
 
 const env = k => (process.env[k] || "").trim();
-const T = () => AbortSignal.timeout(6000);
+const T = () => AbortSignal.timeout(4000); // token + schedule stay well inside the function limit
 const TZ = "America/Chicago";
 const STEP = 30, LEN = 15;             // offer :00 and :30 starts, 15-minute audit
 const OPEN = 9 * 60, LAST = 16 * 60 + 30; // first and last start, Central
@@ -81,7 +81,7 @@ async function book(lead, iso) {
       start: { dateTime: t.toISOString().slice(0, 19), timeZone: "UTC" }, end: { dateTime: end.toISOString().slice(0, 19), timeZone: "UTC" },
       attendees: [{ emailAddress: { address: lead.e, name: lead.n }, type: "required" }],
       isOnlineMeeting: true, onlineMeetingProvider: "teamsForBusiness",
-      transactionId: lead.id  // Graph drops a repeat POST with the same id, so a double tap or retry never double-books
+      transactionId: `${lead.id}-${t.getTime()}`  // Graph drops a repeat POST for the same lead + slot, so a double tap never double-books
     }),
     signal: T()
   });

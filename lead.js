@@ -68,7 +68,7 @@
       tabs.forEach((t, k) => { t.setAttribute("aria-checked", String(k === i)); t.tabIndex = k === i ? 0 : -1; });
       blk.style.transform = `translateX(${i * 100}%)`;
       times.replaceChildren(...days[i].map(d => {
-        const b = el("button", "", clock.format(d)); b.type = "button";
+        const b = el("button", "", clock.format(d)); b.type = "button"; b.setAttribute("aria-label", `${dayKey.format(d)}, ${clock.format(d)} Central`);
         b.addEventListener("click", () => book(d, b));
         return b;
       }));
@@ -84,7 +84,7 @@
         ok.replaceChildren(el("h3", "", "You're booked."), el("p", "booked mono", `${dayKey.format(d)} · ${clock.format(d)} CT · invite sent to ${f.email}`));
         say(""); ok.focus(); return;
       }
-      if (r && r.status === 409 && k.slots && k.slots.length) { j.slots = k.slots; picker(ok, f, j); say("That time just went. Pick another.", true); return; }
+      if (r && r.status === 409 && k.slots && k.slots.length) { j.slots = k.slots; picker(ok, f, j); say("That time just went. Pick another.", true); ok.querySelector(".times button")?.focus(); return; }
       b.classList.remove("on");
       say("That didn't book. Use the calendar instead.", true);
       if (j.booking_url && !ok.querySelector(".ctas")) ok.appendChild(openLink(j.booking_url));
@@ -99,12 +99,13 @@
 
   const done = (f, j) => {
     form.classList.add("done"); say("");
-    const ok = el("div", "ok"); ok.setAttribute("role", "status"); ok.tabIndex = -1;
+    const ok = el("div", "ok"); ok.tabIndex = -1;  // #lead-msg is the live region; the picker would re-announce on every day change
     const booking = /^https:\/\//i.test(j.booking_url || "") ? j.booking_url : null;
     j.booking_url = booking;
     if (Array.isArray(j.slots) && j.slots.length && j.book_token) picker(ok, f, j);
     else {
       const first = (f.name || "").trim().split(/\s+/)[0];
+      ok.setAttribute("role", "status");
       ok.appendChild(el("h3", "", booking ? `${first ? first + ", pick" : "Pick"} a time.` : "Got it. I'll reply today."));
       if (booking) ok.appendChild(openLink(booking));
     }
