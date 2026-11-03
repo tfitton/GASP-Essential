@@ -17,12 +17,15 @@
      MS_CLIENT_SECRET       client secret value
      LEAD_MAILBOX           mailbox the alert is sent from, e.g. tyler.fitton@gaspessential.com
      LEAD_TO                optional, where the alert lands (defaults to LEAD_MAILBOX)
-     BOOKING_URL            Microsoft Bookings page the visitor is sent to after submitting
+     BOOKING_URL            Microsoft Bookings page, the fallback when the calendar below isn't connected
+   With the MS_* vars set and Calendars.ReadWrite granted, the reply also carries open times from LEAD_MAILBOX's calendar and a
+   signed token, so the visitor picks a time on the page and /api/book books it (see _cal.js). Name and email are typed once.
      FLEET_INBOUND_TOKEN    the lead fleet's INBOUND_TOKEN (2026-10-26): every fill is handed to the fleet, which stores it in D1,
                             opens the deal on the dashboard and has Speed-to-Lead send the first reply
      FLEET_API_URL          optional, default https://gasp-fleet-api.strategicom-tools.workers.dev
 */
 const crypto = require("crypto");
+const cal = require("./_cal");
 
 const env = k => (process.env[k] || "").trim();
 const clean = (v, n = 120) => String(v == null ? "" : v).replace(/[\r\n\t<>]/g, " ").replace(/\s+/g, " ").trim().slice(0, n);
@@ -163,7 +166,9 @@ module.exports = async (req, res) => {
     fbp: clean(b.fbp, 120), fbc: clean(b.fbc, 300), url: lead.url
   };
 
-  const [capi, mail, fleet] = await Promise.allSettled([sendCapi(lead, ctx), sendMail(lead), sendFleet(lead, ctx)]);
+  const [capi, mail, fleet, open] = await Promise.allSettled([sendCapi(lead, ctx), sendMail(lead), sendFleet(lead, ctx), cal.slots()]);
+  if (open.status === "rejected") console.error("lead slots failed:", open.reason && open.reason.message);
+  const slots = open.status === "fulfilled" ? open.value : [];
   if (capi.status === "rejected") console.error("lead capi failed:", capi.reason && capi.reason.message);
   if (capi.status === "fulfilled" && capi.value === "skipped") console.warn("lead capi skipped: META_PIXEL_ID / META_CAPI_TOKEN not set");
   const mailed = mail.status === "fulfilled" && mail.value === "sent";
@@ -173,6 +178,8 @@ module.exports = async (req, res) => {
   console[stored ? "log" : "error"](stored ? "LEAD" : "LEAD NOT IN FLEET", JSON.stringify({ ...lead, event_id: ctx.eventId,
     fleet: fleet.status === "rejected" ? String(fleet.reason && fleet.reason.message) : fleet.value,
     mail: mail.status === "rejected" ? String(mail.reason && mail.reason.message) : mail.value }));
-  if (!delivered && !booking_url) return res.status(502).json({ ok: false, error: "deliver" });
-  return res.status(200).json({ ok: true, booking_url });
+  if (!delivered && !booking_url && !slots.length) return res.status(502).json({ ok: false, error: "deliver" });
+  if (!slots.length) return res.status(200).json({ ok: true, booking_url });
+  const book_token = cal.sign({ n: lead.name, e: lead.email, c: lead.company, s: lead.size, p: lead.page, id: ctx.eventId });
+  return res.status(200).json({ ok: true, booking_url, slots, book_token });
 };
