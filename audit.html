@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GASP! Essential · Free lead response audit</title>
+<meta name="description" content="We send your firm a test lead, time the reply and walk you through it. Free 15-minute lead response audit for St. Louis advisory and brokerage firms.">
+<meta name="theme-color" content="#0A0A0A">
+<meta property="og:title" content="The first reply wins the job.">
+<meta property="og:description" content="We send your firm a test lead, time the reply and walk you through it. Free, 15 minutes.">
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/xsp0whc.css">
+<link rel="stylesheet" href="https://use.typekit.net/kfq0nlf.css">
+<link rel="stylesheet" href="/site.css">
+<script src="/track.js" data-page="audit" defer></script>
+<style>
+/* /audit · paid landing page for the lead response audit ads (gasp_v5). One screen, one action. */
+.au{position:relative;min-height:100vh;min-height:100svh;padding:max(20px,env(safe-area-inset-top)) 0 0;overflow:hidden;display:flex;flex-direction:column}
+.au .glow{right:-24vw;top:-28vh}
+.au .top{position:relative;z-index:1;padding:0 0 clamp(18px,4vh,44px)}
+.au .top img{width:92px;height:auto}
+.au .grid{position:relative;z-index:1;flex:1;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(28px,5vw,88px);align-items:center;padding-bottom:clamp(28px,6vh,72px)}
+.au h1{--t:clamp(40px,5.4vw,84px);--b:clamp(50px,7vw,112px)}
+.au .lede{margin-top:clamp(14px,2.4vh,26px);max-width:34ch;font-size:clamp(17px,1.35vw,20px);line-height:1.5;color:var(--body)}
+.au .lead{margin-top:clamp(12px,2.6vh,30px);max-width:620px}
+.au .lead input,.au .lead select{font-size:clamp(19px,1.6vw,23px);padding:8px 0 10px}
+.au .lead .ctas{margin-top:clamp(18px,3.4vh,34px)}
+/* the test: an inquiry lands at 4:58 on a Friday and the board counts how long it sits */
+.test{border:1px solid var(--line);background-color:#0d0c0b;background-image:radial-gradient(rgba(232,75,28,.13) 1.4px,transparent 1.6px);background-size:9px 9px;padding:clamp(20px,2.6vw,34px)}
+.test .when{color:var(--muted)}
+.test .q{margin-top:12px;font-family:var(--display);font-style:italic;font-weight:200;letter-spacing:-.02em;line-height:1.15;font-size:clamp(22px,2.1vw,32px)}
+.test canvas{display:block;width:100%;height:clamp(58px,7vw,104px);margin-top:clamp(20px,3.4vh,36px)}
+.test .state{display:flex;align-items:center;gap:10px;margin-top:clamp(14px,2.4vh,22px);color:var(--paper)}
+.test .state i{width:9px;height:9px;flex:none;background:var(--orange);animation:pip 1s steps(2) infinite}
+.test.replied .state i{animation:none;background:var(--paper)}
+@keyframes pip{50%{opacity:.18}}
+.au .legal{position:relative;z-index:1;padding:14px 0 max(18px,env(safe-area-inset-bottom));border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:12px;color:var(--muted)}
+.au .legal a{color:var(--muted);text-decoration:none;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.au .legal a:hover{color:var(--paper)}.au .legal a:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+@media (max-width:860px){
+  .au .top{padding-bottom:18px}.au .top img{width:76px}
+  .au .grid{grid-template-columns:1fr;align-items:start;gap:44px}
+  .au h1{--t:clamp(36px,10vw,56px);--b:clamp(44px,12.6vw,72px)}
+  .au .lede{margin-top:12px;font-size:16px}
+  .au .lead{margin-top:8px}
+  .au .lead label{padding-top:10px}
+  .au .lead .row{grid-template-columns:1fr 1fr;gap:0 16px}
+  .au .lead input,.au .lead select{font-size:19px;padding:6px 0 8px}
+  .au .lead .ctas{margin-top:22px}
+  .au .lead .btn{width:100%;justify-content:center}
+}
+@media (max-width:380px){.au .lead .row{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.test .state i{animation:none}}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<main class="au">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap top"><img src="/logo.svg" alt="GASP! Essential" width="92" height="34"></div>
+  <div class="wrap grid">
+    <div>
+      <h1 class="hl"><span class="t">The first reply</span><span class="b">wins the job.</span></h1>
+      <p class="lede">We send your firm a test lead and show you how long it sat. Free 15-minute audit for St. Louis firms. No pitch.</p>
+      <form class="lead" data-page="audit" novalidate>
+        <div class="row">
+          <label><span class="mono">Name</span><input name="name" autocomplete="name" required></label>
+          <label><span class="mono">Work email</span><input name="email" type="email" autocomplete="email" required></label>
+        </div>
+        <div class="row">
+          <label><span class="mono">Company</span><input name="company" autocomplete="organization" required></label>
+          <label><span class="mono">Team size</span><select name="size" required><option value="" selected disabled>Choose</option><option>1-9</option><option>10-25</option><option>26-50</option><option>51+</option></select></label>
+        </div>
+        <label class="hp" aria-hidden="true">Leave blank<input name="hp_url" tabindex="-1" autocomplete="off"></label>
+        <div class="ctas send"><button class="btn" type="submit"><svg class="a" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11.5" rx="1.5"/><path d="M1.5 6.5h13M5 1v3M11 1v3"/></svg><span class="t">Book my free audit</span><svg class="b" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button></div>
+        <p class="msg mono" id="lead-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <figure class="test" aria-label="A new inquiry arrives Friday at 4:58 PM and waits 64 hours for a reply">
+      <div class="when mono">Fri 4:58 PM</div>
+      <p class="q">Hi, can someone call me about moving my 401(k)?</p>
+      <canvas class="led" data-end="3844" aria-hidden="true"></canvas>
+      <div class="state mono" aria-hidden="true"><i></i><span>No reply yet</span></div>
+    </figure>
+  </div>
+  <div class="wrap legal"><span>© 2026 GASP! Essential LLC · St. Louis</span><a href="/privacy.html">Privacy</a></div>
+</main>
+<script src="/audit.js" defer></script>
+<script src="/lead.js" defer></script>
+</body>
+</html>
