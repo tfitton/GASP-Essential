@@ -20,8 +20,7 @@
 <a class="skip" href="#main">Skip to content</a>
 <main id="main" tabindex="-1">
 <section class="hero">
-  <picture class="scene bg" data-boil="img/hero/d-bg-boil.webp" data-boil-m="img/hero/m-bg-boil.webp"><source media="(max-width:899px)" srcset="img/hero/m-bg.webp" width="1170" height="3990"><img src="img/hero/d-bg.webp" width="2880" height="2800" alt="" fetchpriority="high"></picture>
-  <picture class="scene fg" data-boil="img/hero/d-fg-boil.webp" data-boil-m="img/hero/m-fg-boil.webp"><source media="(max-width:899px)" srcset="img/hero/m-fg.webp" width="1170" height="3990"><img src="img/hero/d-fg.webp" width="2880" height="2800" alt="" fetchpriority="high"></picture>
+  <div class="street" id="street"></div><div class="street" id="street-m"></div>
   <i class="rail l"></i><i class="rail r"></i>
   <header class="nav">
   <a class="logo" href="index.html" aria-label="GASP! Essential home"><img src="img/logo-white.svg" alt="" width="89" height="30"></a>
@@ -41,9 +40,6 @@
     <p class="sub">Agents that take the repeat work off a small team. GASP builds them, watches every run, and sends you one email a week.</p>
     <div class="go"><a class="btn lg" href="book.html">Book a free audit</a></div>
   </div>
-  <svg class="wire d" viewBox="0 0 1440 1400" aria-hidden="true"><path d="M287 609 H468 Q488 609 488 629 V772 Q488 792 508 792"/></svg>
-  <svg class="wire m" viewBox="0 0 390 1330" aria-hidden="true"><path d="M44 527 V772"/></svg>
-  <span class="tag" aria-hidden="true"><img src="img/bot-face.webp" alt="" width="40" height="40"></span>
   <div class="frame" role="img" aria-label="A lead follow-up workflow running on its own: new inquiry and research are done, the first email is being drafted, the guardrail check and the send come next.">
     <div class="tb" aria-hidden="true"><img class="bang" src="img/bang.svg" alt="" width="9" height="17"><span class="crumb"><span>Your agency / </span><b>Lead follow-up</b></span>
       <span class="run"><i></i>Running</span>
@@ -135,6 +131,7 @@
   </div>
   <div class="legal"><span>© 2026 GASP! Essential LLC · Missouri LLC est. April 2026 · St. Louis</span><a href="privacy.html">Privacy</a></div>
 </footer>
+<script src="js/street.js" defer></script>
 <script src="js/site.js" defer></script>
 </body>
 </html>
