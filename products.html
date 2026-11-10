@@ -3,50 +3,67 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#E84B1C">
 <title>Products · GASP! Essential</title>
 <meta name="description" content="Social Cut turns one video into a week of content. Custom solutions build the tool you wish existed.">
-<meta name="theme-color" content="#0A0A0A">
 <meta property="og:title" content="Products · GASP! Essential">
 <meta property="og:description" content="Social Cut turns one video into a week of content. Custom solutions build the tool you wish existed.">
-<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="icon" href="img/bang.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="stylesheet" href="https://use.typekit.net/xsp0whc.css">
 <link rel="stylesheet" href="https://use.typekit.net/kfq0nlf.css">
-<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<link rel="stylesheet" href="css/v5.css">
 <script src="track.js" defer></script>
 </head>
 <body>
-<div class="grain" aria-hidden="true"></div>
-<header class="nav">
-  <a class="home" href="index.html" aria-label="GASP! Essential home"><img src="logo.svg" alt="" width="92" height="34"></a>
-  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span>Menu</span><i aria-hidden="true"></i></button>
+<a class="skip" href="#main">Skip to content</a>
+<main id="main" tabindex="-1">
+<section class="phero">
+  <picture class="scene"><source media="(max-width:899px)" srcset="img/page/products-m.webp" width="1170" height="810"><img src="img/page/products-d.webp" width="2880" height="720" alt="" fetchpriority="high"></picture>
+  <i class="rail l"></i><i class="rail r"></i>
+  <header class="nav">
+  <a class="logo" href="index.html" aria-label="GASP! Essential home"><img src="img/logo-white.svg" alt="" width="89" height="30"></a>
+  <nav aria-label="Main"><ul><li><a href="services.html">Services</a></li><li><a href="products.html" aria-current="page">Products</a></li><li><a href="about.html">About</a></li></ul></nav>
+  <a class="btn" href="book.html">Book a free audit</a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span>Menu</span><i class="ph-fill ph-list" aria-hidden="true"></i></button>
 </header>
-<nav class="menu" id="menu" aria-label="Site">
-  <ol><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="products.html" aria-current="page">Products</a></li></ol>
-  <div class="foot"><a href="mailto:tyler.fitton@gaspessential.com">tyler.fitton@gaspessential.com</a><a href="https://socialcut.io" target="_blank" rel="noopener">socialcut.io</a></div>
-</nav>
-<main>
-<section class="split">
-  <a class="door" href="#socialcut"><div class="bgimg" aria-hidden="true"><picture><source srcset="img/socialcut.webp" media="(prefers-reduced-motion: reduce)"><img src="img/socialcut-boil.webp" alt=""></picture></div><div class="nm">Social Cut</div><h1 class="hl"><span class="t">Ready</span><span class="b">now.</span></h1></a>
-  <a class="door" href="#custom"><div class="bgimg" aria-hidden="true"><picture><source srcset="img/custom.webp" media="(prefers-reduced-motion: reduce)"><img src="img/custom-boil.webp" alt=""></picture></div><div class="nm">Custom solutions</div><div class="hl"><span class="t">Made</span><span class="b">for you.</span></div></a>
+<div class="menu" id="menu">
+  <ol data-nav><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="products.html" aria-current="page">Products</a></li><li><a href="about.html">About</a></li></ol>
+  <a class="btn lg" href="book.html">Book a free audit</a>
+  <div class="more"><a href="mailto:tyler.fitton@gaspessential.com">tyler.fitton@gaspessential.com</a><a href="https://socialcut.io" target="_blank" rel="noopener">socialcut.io</a></div>
+</div>
+
+  <div class="copy"><h1>Ready now. Made for you.</h1></div>
 </section>
-<section><div class="wrap">
-  <article class="prod" id="socialcut"><div class="media" data-iris><picture><source srcset="img/socialcut.webp" media="(prefers-reduced-motion: reduce)"><img src="img/socialcut-boil.webp" alt="" width="1120" height="700" loading="lazy"></picture></div><div class="copy" data-rise-group><div class="nm">Social Cut</div><h2>Upload once. Post all week.</h2><p class="d">Drop in one long video. Social Cut cuts it into short vertical clips, captions every one, builds a carousel from the key points and writes the post copy for each platform.</p><ul class="inc"><li>Captioned cuts, every ratio</li><li>A carousel from the key points</li><li>Post copy per platform</li></ul><div class="ctas"><a class="btn" href="https://socialcut.io" target="_blank" rel="noopener"><svg class="a" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="1.5"/><path d="M2 4l6 5 6-5"/></svg><span class="t">Join the waitlist</span><svg class="b" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div></div></article>
-  <article class="prod" id="custom"><div class="media" data-iris><picture><source srcset="img/custom.webp" media="(prefers-reduced-motion: reduce)"><img src="img/custom-boil.webp" alt="" width="1120" height="700" loading="lazy"></picture></div><div class="copy" data-rise-group><div class="nm">Custom solutions</div><h2>If it should exist, we build it.</h2><p class="d">Internal dashboards, client portals, booking flows, the spreadsheet that should have been an app. We scope it with you, build it, launch it and keep it running.</p><ul class="inc"><li>Scoped with you</li><li>Built end to end</li><li>Launched and supported</li></ul><div class="ctas"><a class="btn" href="book.html"><svg class="a" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11.5" rx="1.5"/><path d="M1.5 6.5h13M5 1v3M11 1v3"/></svg><span class="t">Pitch an idea</span><svg class="b" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div></div></article>
-</div></section>
-<section class="close"><div class="wrap">
-  <h2 class="bk" id="closeq" data-rise>Who would you hire <em>first?</em></h2>
-  <div class="ctas" data-rise><a class="btn" href="book.html" data-magnet><svg class="a" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11.5" rx="1.5"/><path d="M1.5 6.5h13M5 1v3M11 1v3"/></svg><span class="t">Book a free discovery audit</span><svg class="b" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
-  <canvas class="gbot pick" data-bot="pickme" aria-hidden="true"></canvas>
-  <footer class="sign">
-    <div class="night"><canvas class="gbot" data-bot="nightshift" data-dots="100" aria-hidden="true"></canvas></div>
-    <div class="who"><b>Tyler Fitton</b><br><span>Creative Director, GASP! Essential · St. Louis</span></div>
-    <nav aria-label="Footer"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="products.html">Products</a><a href="mailto:tyler.fitton@gaspessential.com">tyler.fitton@gaspessential.com</a><a href="https://www.linkedin.com/company/gasp-essential" target="_blank" rel="noopener">LinkedIn</a></nav>
-    <p class="legal">© 2026 GASP! Essential LLC · Missouri LLC est. April 2026 · St. Louis</p>
-  </footer>
-</div></section>
+
+<section class="band sec first">
+  <div class="split" id="socialcut">
+    <div class="pic"><picture><source media="(max-width:899px)" srcset="img/card/socialcut-m.webp" width="1026" height="708"><img src="img/card/socialcut-tall.webp" width="1240" height="1000" alt="" loading="lazy"></picture></div>
+    <div class="txt"><span class="nm">Social Cut</span><h2>Upload once. Post all week.</h2><p>Drop in one long video. Social Cut cuts it into short vertical clips, captions every one, builds a carousel from the key points and writes the post copy for each platform.</p><ul class="list"><li>Captioned cuts, every ratio</li><li>A carousel from the key points</li><li>Post copy per platform</li></ul><a class="btn lg" href="https://socialcut.io" target="_blank" rel="noopener">Join the waitlist</a></div>
+  </div>
+  <div class="split flip" id="custom">
+    <div class="pic"><picture><source media="(max-width:899px)" srcset="img/card/build-m.webp" width="1026" height="708"><img src="img/card/build-tall.webp" width="1240" height="1000" alt="" loading="lazy"></picture></div>
+    <div class="txt"><span class="nm">Custom solutions</span><h2>If it should exist, we build it.</h2><p>Internal dashboards, client portals, booking flows, the spreadsheet that should have been an app. We scope it with you, build it, launch it and keep it running.</p><ul class="list"><li>Scoped with you</li><li>Built end to end</li><li>Launched and supported</li></ul><a class="btn lg" href="book.html">Pitch an idea</a></div>
+  </div>
+</section>
 </main>
-<script src="env.js"></script>
-<script src="bots.js" defer></script>
+<section class="close" aria-labelledby="closeq">
+  <i class="rail l"></i><i class="rail r"></i>
+  <picture class="scene"><source media="(max-width:899px)" srcset="img/close/m.webp" width="1170" height="900"><img src="img/close/d.webp" width="2880" height="800" alt="" loading="lazy"></picture>
+  <div class="copy">
+    <h2 id="closeq">Who would you hire first?</h2>
+    <div class="go"><a class="btn lg" href="book.html">Book a free audit</a></div>
+  </div>
+</section>
+<footer class="foot band">
+  <div class="in">
+    <a class="logo" href="index.html" aria-label="GASP! Essential home"><img src="img/logo-orange.svg" alt="" width="89" height="30" loading="lazy"></a>
+    <div class="who"><b>Tyler Fitton</b><br>Creative Director, GASP! Essential · St. Louis</div>
+    <nav aria-label="Footer"><a href="services.html">Services</a><a href="products.html">Products</a><a href="about.html">About</a><a href="mailto:tyler.fitton@gaspessential.com">Email</a><a href="https://www.linkedin.com/company/gasp-essential" target="_blank" rel="noopener">LinkedIn</a></nav>
+  </div>
+  <div class="legal"><span>© 2026 GASP! Essential LLC · Missouri LLC est. April 2026 · St. Louis</span><a href="privacy.html">Privacy</a></div>
+</footer>
+<script src="js/site.js" defer></script>
 </body>
 </html>

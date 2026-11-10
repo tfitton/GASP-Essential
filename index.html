@@ -3,64 +3,138 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#E84B1C">
 <title>GASP! Essential · Embrace your agency</title>
 <meta name="description" content="GASP! Essential builds the systems that take repeat work off a small team, plus the lead generation, brand and content that run on top. St. Louis.">
-<meta name="theme-color" content="#0A0A0A">
 <meta property="og:title" content="GASP! Essential · Embrace your agency">
 <meta property="og:description" content="GASP! Essential builds the systems that take repeat work off a small team, plus the lead generation, brand and content that run on top. St. Louis.">
-<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="icon" href="img/bang.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="stylesheet" href="https://use.typekit.net/xsp0whc.css">
 <link rel="stylesheet" href="https://use.typekit.net/kfq0nlf.css">
-<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<link rel="stylesheet" href="css/v5.css">
 <script src="track.js" defer></script>
 </head>
 <body>
-<div class="grain" aria-hidden="true"></div>
-<header class="nav">
-  <a class="home" href="index.html" aria-label="GASP! Essential home"><img src="logo.svg" alt="" width="92" height="34"></a>
-  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span>Menu</span><i aria-hidden="true"></i></button>
+<a class="skip" href="#main">Skip to content</a>
+<main id="main" tabindex="-1">
+<section class="hero">
+  <picture class="scene bg" data-boil="img/hero/d-bg-boil.webp" data-boil-m="img/hero/m-bg-boil.webp"><source media="(max-width:899px)" srcset="img/hero/m-bg.webp" width="1170" height="3990"><img src="img/hero/d-bg.webp" width="2880" height="2800" alt="" fetchpriority="high"></picture>
+  <picture class="scene fg" data-boil="img/hero/d-fg-boil.webp" data-boil-m="img/hero/m-fg-boil.webp"><source media="(max-width:899px)" srcset="img/hero/m-fg.webp" width="1170" height="3990"><img src="img/hero/d-fg.webp" width="2880" height="2800" alt="" fetchpriority="high"></picture>
+  <i class="rail l"></i><i class="rail r"></i>
+  <header class="nav">
+  <a class="logo" href="index.html" aria-label="GASP! Essential home"><img src="img/logo-white.svg" alt="" width="89" height="30"></a>
+  <nav aria-label="Main"><ul><li><a href="services.html">Services</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About</a></li></ul></nav>
+  <a class="btn" href="book.html">Book a free audit</a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span>Menu</span><i class="ph-fill ph-list" aria-hidden="true"></i></button>
 </header>
-<nav class="menu" id="menu" aria-label="Site">
-  <ol><li><a href="index.html" aria-current="page">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="products.html">Products</a></li></ol>
-  <div class="foot"><a href="mailto:tyler.fitton@gaspessential.com">tyler.fitton@gaspessential.com</a><a href="https://socialcut.io" target="_blank" rel="noopener">socialcut.io</a></div>
-</nav>
-<main>
-<section class="hero full"><div class="bgimg" aria-hidden="true"><picture><source srcset="img/arena.webp" media="(prefers-reduced-motion: reduce)"><img src="img/arena-boil.webp" alt="" data-zoom></picture></div><div class="wrap">
-  <h1 class="hl" style="--t:clamp(44px,7.4vw,124px);--b:clamp(72px,12.4vw,206px)" data-rise-group><span class="t" id="hi">Embrace your</span><span class="b">agency.</span></h1>
-</div></section>
-<section class="sec" id="services"><div class="wrap">
-  <div class="tiles"><a class="tile" id="onboard" href="services.html#onboard" data-fly><div class="img"><picture><source srcset="img/onboard.webp" media="(prefers-reduced-motion: reduce)"><img src="img/onboard-boil.webp" alt="" width="1120" height="700" loading="lazy"></picture></div><div class="txt"><div class="nm">Workspace deployment</div><div class="h">Plugged into your tools.</div></div></a><a class="tile" id="manage" href="services.html#manage" data-fly><div class="img"><picture><source srcset="img/manage.webp" media="(prefers-reduced-motion: reduce)"><img src="img/manage-boil.webp" alt="" width="1120" height="700" loading="lazy"></picture></div><div class="txt"><div class="nm">Managed agents</div><div class="h">Runs itself.</div></div></a><a class="tile" id="budget" href="services.html#budget" data-fly><div class="img"><picture><source srcset="img/budget.webp" media="(prefers-reduced-motion: reduce)"><img src="img/budget-boil.webp" alt="" width="1120" height="700" loading="lazy"></picture><div class="cap" style="top:27.1%"><span>CAP</span></div></div><div class="txt"><div class="nm">Managed AI spend</div><div class="h">No surprise bills.</div></div></a><a class="tile" id="govern" href="services.html#govern" data-fly><div class="img"><picture><source srcset="img/govern.webp" media="(prefers-reduced-motion: reduce)"><img src="img/govern-boil.webp" alt="" width="1120" height="700" loading="lazy"></picture></div><div class="txt"><div class="nm">Security + governance</div><div class="h">Guardrails built in.</div></div></a></div>
-</div></section>
-<section class="depth" aria-label="The idea"><div class="stage"><div class="inner">
+<div class="menu" id="menu">
+  <ol data-nav><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About</a></li></ol>
+  <a class="btn lg" href="book.html">Book a free audit</a>
+  <div class="more"><a href="mailto:tyler.fitton@gaspessential.com">tyler.fitton@gaspessential.com</a><a href="https://socialcut.io" target="_blank" rel="noopener">socialcut.io</a></div>
+</div>
+
+  <div class="bar"><div>Six years in pro sports: Pittsburgh Pirates, St. Louis Blues, Sporting KC</div></div>
+  <div class="copy">
+    <h1><span class="t" id="hi">Embrace your</span> <span class="p">agency.</span></h1>
+    <p class="sub">Agents that take the repeat work off a small team. GASP builds them, watches every run, and sends you one email a week.</p>
+    <div class="go"><a class="btn lg" href="book.html">Book a free audit</a></div>
+  </div>
+  <svg class="wire d" viewBox="0 0 1440 1400" aria-hidden="true"><path d="M287 609 H468 Q488 609 488 629 V772 Q488 792 508 792"/></svg>
+  <svg class="wire m" viewBox="0 0 390 1330" aria-hidden="true"><path d="M44 527 V772"/></svg>
+  <span class="tag" aria-hidden="true"><img src="img/bot-face.webp" alt="" width="40" height="40"></span>
+  <div class="frame" role="img" aria-label="A lead follow-up workflow running on its own: new inquiry and research are done, the first email is being drafted, the guardrail check and the send come next.">
+    <div class="tb" aria-hidden="true"><img class="bang" src="img/bang.svg" alt="" width="9" height="17"><span class="crumb"><span>Your agency / </span><b>Lead follow-up</b></span>
+      <span class="run"><i></i>Running</span>
+      <span class="rt"><span class="av"><img src="img/bot-face.webp" alt="" width="26" height="26"><img src="img/bot-face.webp" alt="" width="26" height="26"><img src="img/bot-face.webp" alt="" width="26" height="26"></span>
+      <span class="ob"><i class="ph-fill ph-envelope-simple" aria-hidden="true"></i>Weekly email</span></span></div>
+    <div class="fbody" aria-hidden="true" data-ui>
+      <div class="side"><span class="on"><i class="ph-fill ph-lightning" aria-hidden="true"></i>Runs</span><span><i class="ph-fill ph-squares-four" aria-hidden="true"></i>Workflows</span>
+        <span><i class="ph-fill ph-shield-check" aria-hidden="true"></i>Guardrails</span><span><i class="ph-fill ph-chart-bar" aria-hidden="true"></i>Reports</span>
+        <b class="grp">Workflows</b><span class="on"><i class="ph-fill ph-circle" aria-hidden="true"></i>Lead follow-up</span><span><i class="ph-fill ph-circle" aria-hidden="true"></i>Invoice chase</span><span><i class="ph-fill ph-circle" aria-hidden="true"></i>Weekly posts</span></div>
+      <div class="canvas">
+        <svg class="d" viewBox="0 0 488 648" preserveAspectRatio="none"><path d="M218 68 H270"/><path d="M368 112 V196"/><path d="M270 234 H218" class="todo"/><path d="M120 278 V362" class="todo"/></svg>
+        <svg class="m" viewBox="0 0 342 554" preserveAspectRatio="none"><path d="M164 56 H178"/><path d="M253 100 V128"/><path d="M178 168 H164" class="todo"/><path d="M89 228 V362" class="todo"/></svg>
+        <div class="node n1"><div class="nh"><i class="ph-fill ph-envelope-simple" aria-hidden="true"></i><b>New inquiry</b></div><div class="nb"><span>Website form or inbox</span><span class="st">Done</span></div></div>
+        <div class="node n2"><div class="nh"><i class="ph-fill ph-magnifying-glass" aria-hidden="true"></i><b>Research</b></div><div class="nb"><span>Company, role, recent news</span><span class="st">Done</span></div></div>
+        <div class="node n3 on"><div class="nh"><i class="ph-fill ph-pen-nib" aria-hidden="true"></i><b>Draft in your voice</b></div><div class="nb"><span>First email, ready to send</span><span class="st">Running</span></div></div>
+        <div class="node n4"><div class="nh"><i class="ph-fill ph-shield-check" aria-hidden="true"></i><b>Guardrail check</b></div><div class="nb"><span>Inside send and spend limits</span><span class="st">Next</span></div></div>
+        <div class="node n5"><div class="nh"><i class="ph-fill ph-paper-plane-tilt" aria-hidden="true"></i><b>Send and log to CRM</b></div><div class="nb"><span>Replies come straight to you</span><span class="st">Next</span></div></div>
+        <div class="cur c1"><svg viewBox="0 0 16 16"><path d="M2 1l11 6-5 1.4L6 14z" fill="#0A0A0A"/></svg><span><img src="img/bot-face.webp" alt="" width="16" height="16">Scout</span></div>
+        <div class="cur c2"><svg viewBox="0 0 16 16"><path d="M2 1l11 6-5 1.4L6 14z" fill="#0A0A0A"/></svg><span><img src="img/bot-face.webp" alt="" width="16" height="16">Guard</span></div>
+      </div>
+      <div class="panel"><b class="ptitle">Guardrails</b>
+        <div class="row"><span class="k">Sends</span><b>40 a day</b></div><div class="row"><span class="k">Spend</span><b>$6 a day</b></div><div class="row"><span class="k">Publishing</span><b>Off</b></div>
+        <div class="week">This week</div><div class="pips"><i class="pip lit"></i><i class="pip"></i><i class="pip"></i><i class="pip"></i><i class="pip"></i></div>
+        <p class="note">Anything outside these limits stops and comes to GASP.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="jobs">
+  <div class="head solo"><h2 id="jobs">Four jobs off your desk.</h2></div>
+  <div class="cards">
+    <a class="card" href="services.html#deploy" data-fly><span class="nm">Workspace deployment</span><h3>Plugged into your tools.</h3><div class="frag" aria-hidden="true" data-ui><b class="ptitle">Connected</b>
+      <div class="row"><span class="k"><i class="ph-fill ph-envelope-simple" aria-hidden="true"></i>Email</span><span class="st">Done</span></div>
+      <div class="row"><span class="k"><i class="ph-fill ph-calendar-blank" aria-hidden="true"></i>Calendar</span><span class="st">Done</span></div>
+      <div class="row"><span class="k"><i class="ph-fill ph-folder-simple" aria-hidden="true"></i>Files</span><span class="st">Done</span></div>
+      <div class="row"><span class="k"><i class="ph-fill ph-address-book" aria-hidden="true"></i>CRM</span><span class="st on">Running</span></div></div><picture><source media="(max-width:899px)" srcset="img/card/plug-m.webp" width="1026" height="708"><img class="band-img" src="img/card/plug-620.webp" width="1240" height="680" alt="" loading="lazy"></picture></a>
+    <a class="card" href="services.html#agents" data-fly><span class="nm">Managed agents</span><h3>Runs itself.</h3><div class="frag" aria-hidden="true" data-ui><b class="ptitle">Runs today</b>
+      <div class="row"><span class="k"><i class="ph-fill ph-lightning" aria-hidden="true"></i>Lead follow-up</span><span class="st on">Running</span></div>
+      <div class="row"><span class="k"><i class="ph-fill ph-receipt" aria-hidden="true"></i>Invoice chase</span><span class="st">Done</span></div>
+      <div class="row"><span class="k"><i class="ph-fill ph-megaphone-simple" aria-hidden="true"></i>Weekly posts</span><span class="st">Next</span></div>
+      <div class="week">This week</div><div class="pips"><i class="pip lit"></i><i class="pip"></i><i class="pip"></i><i class="pip"></i><i class="pip"></i></div></div><picture><source media="(max-width:899px)" srcset="img/card/relay-m.webp" width="1026" height="708"><img class="band-img" src="img/card/relay-620.webp" width="1240" height="680" alt="" loading="lazy"></picture></a>
+    <a class="card" href="services.html#spend" data-fly><span class="nm">Managed AI spend</span><h3>No surprise bills.</h3><div class="frag" aria-hidden="true" data-ui><b class="ptitle">Spend this month</b>
+      <div class="meter"><i style="width:66%"></i></div>
+      <div class="row"><span class="k">Cap per day</span><b>$6</b></div>
+      <p class="note">Work stops at the cap.</p></div><picture><source media="(max-width:899px)" srcset="img/card/budget-m.webp" width="1026" height="708"><img class="band-img" src="img/card/budget-620.webp" width="1240" height="680" alt="" loading="lazy"></picture></a>
+    <a class="card" href="services.html#guardrails" data-fly><span class="nm">Security + governance</span><h3>Guardrails built in.</h3><div class="frag" aria-hidden="true" data-ui><b class="ptitle">Guardrails</b>
+      <div class="row"><span class="k">Sends</span><b>40 a day</b></div>
+      <div class="row"><span class="k">Spend</span><b>$6 a day</b></div>
+      <div class="row"><span class="k">Publishing</span><b>Off</b></div>
+      <p class="note">Anything outside these limits stops and comes to GASP.</p></div><picture><source media="(max-width:899px)" srcset="img/card/guard-m.webp" width="1026" height="708"><img class="band-img" src="img/card/guard-620.webp" width="1240" height="680" alt="" loading="lazy"></picture></a>
+  </div>
+</section>
+
+<section class="depth band" aria-label="The idea"><div class="stage"><div class="inner">
   <p class="q">What separated the teams that grew from the ones that just stayed busy?</p>
   <span class="big">A system.</span>
 </div></div></section>
-<section class="sec credits"><div class="wrap">
-  <h2 class="bk" data-rise>Six years in <em>pro sports.</em></h2>
-  <ul data-rise-group><li>Pittsburgh Pirates</li><li>Sporting Kansas City</li><li>St. Louis Blues</li></ul>
-</div></section>
-<section class="sec" id="creative"><div class="wrap">
-  <h2 class="bk" data-rise>Creative, <em>too.</em></h2>
-  <div class="tiles three"><a class="tile" id="leads" href="services.html#leads" data-fly><div class="img"><picture><source srcset="img/leads.webp" media="(prefers-reduced-motion: reduce)"><img src="img/leads-boil.webp" alt="" width="1120" height="700" loading="lazy"></picture></div><div class="txt"><div class="nm">Lead generation</div><div class="h">A prospect list that researches itself.</div></div></a><a class="tile" id="brand" href="services.html#brand" data-fly><div class="img"><picture><source srcset="img/brand.webp" media="(prefers-reduced-motion: reduce)"><img src="img/brand-boil.webp" alt="" width="1120" height="700" loading="lazy"></picture></div><div class="txt"><div class="nm">Brand + design</div><div class="h">Look like the company you're becoming.</div></div></a><a class="tile" id="content" href="services.html#content" data-fly><div class="img"><picture><source srcset="img/content.webp" media="(prefers-reduced-motion: reduce)"><img src="img/content-boil.webp" alt="" width="1120" height="700" loading="lazy"></picture></div><div class="txt"><div class="nm">Content production</div><div class="h">One shoot. A month of posts.</div></div></a></div>
-</div></section>
-<section class="sec" id="products"><div class="wrap">
-  <h2 class="bk" data-rise>Off the shelf, <em>or built to order.</em></h2>
-  <div class="tiles"><a class="tile" id="socialcut" href="products.html#socialcut" data-fly><div class="img"><picture><source srcset="img/socialcut.webp" media="(prefers-reduced-motion: reduce)"><img src="img/socialcut-boil.webp" alt="" width="1120" height="700" loading="lazy"></picture></div><div class="txt"><div class="nm">Social Cut</div><div class="h">One video in. A week of content out.</div></div></a><a class="tile" id="custom" href="products.html#custom" data-fly><div class="img"><picture><source srcset="img/custom.webp" media="(prefers-reduced-motion: reduce)"><img src="img/custom-boil.webp" alt="" width="1120" height="700" loading="lazy"></picture></div><div class="txt"><div class="nm">Custom solutions</div><div class="h">The tool you wish existed.</div></div></a></div>
-</div></section>
-<section class="close"><div class="wrap">
-  <h2 class="bk" id="closeq" data-rise>Who would you hire <em>first?</em></h2>
-  <div class="ctas" data-rise><a class="btn" href="book.html" data-magnet><svg class="a" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11.5" rx="1.5"/><path d="M1.5 6.5h13M5 1v3M11 1v3"/></svg><span class="t">Book a free discovery audit</span><svg class="b" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
-  <canvas class="gbot pick" data-bot="pickme" aria-hidden="true"></canvas>
-  <footer class="sign">
-    <div class="night"><canvas class="gbot" data-bot="nightshift" data-dots="100" aria-hidden="true"></canvas></div>
-    <div class="who"><b>Tyler Fitton</b><br><span>Creative Director, GASP! Essential · St. Louis</span></div>
-    <nav aria-label="Footer"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="products.html">Products</a><a href="mailto:tyler.fitton@gaspessential.com">tyler.fitton@gaspessential.com</a><a href="https://www.linkedin.com/company/gasp-essential" target="_blank" rel="noopener">LinkedIn</a></nav>
-    <p class="legal">© 2026 GASP! Essential LLC · Missouri LLC est. April 2026 · St. Louis</p>
-  </footer>
-</div></section>
+
+<section class="band" aria-labelledby="creative">
+  <div class="head solo"><h2 id="creative">Creative, too.</h2></div>
+  <div class="cards three">
+    <a class="card nofrag" href="services.html#leads"><span class="nm">Lead generation</span><h3>A prospect list that researches itself.</h3><picture><source media="(max-width:899px)" srcset="img/card/leads-m.webp" width="1026" height="708"><img class="band-img" src="img/card/leads-405.webp" width="812" height="560" alt="" loading="lazy"></picture></a>
+    <a class="card nofrag" href="services.html#brand"><span class="nm">Brand + design</span><h3>Look like the company you're becoming.</h3><picture><source media="(max-width:899px)" srcset="img/card/brand-m.webp" width="1026" height="708"><img class="band-img" src="img/card/brand-405.webp" width="812" height="560" alt="" loading="lazy"></picture></a>
+    <a class="card nofrag" href="services.html#content"><span class="nm">Content production</span><h3>One shoot.<br>A month of posts.</h3><picture><source media="(max-width:899px)" srcset="img/card/content-m.webp" width="1026" height="708"><img class="band-img" src="img/card/content-405.webp" width="812" height="560" alt="" loading="lazy"></picture></a>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="shelf">
+  <div class="head solo"><h2 id="shelf"><span class="nw">Off the shelf,</span> <span class="nw">or built to order.</span></h2></div>
+  <div class="cards wide">
+    <a class="card nofrag" href="products.html#socialcut"><span class="nm">Social Cut</span><h3>One video in.<br>A week of content out.</h3><picture><source media="(max-width:899px)" srcset="img/card/socialcut-m.webp" width="1026" height="708"><img class="band-img" src="img/card/socialcut-620.webp" width="1240" height="600" alt="" loading="lazy"></picture></a>
+    <a class="card nofrag" href="products.html#custom"><span class="nm">Custom solutions</span><h3>The tool you wish existed.</h3><picture><source media="(max-width:899px)" srcset="img/card/build-m.webp" width="1026" height="708"><img class="band-img" src="img/card/build-620.webp" width="1240" height="600" alt="" loading="lazy"></picture></a>
+  </div>
+</section>
 </main>
-<script src="env.js"></script>
-<script src="bots.js" defer></script>
+<section class="close" aria-labelledby="closeq">
+  <i class="rail l"></i><i class="rail r"></i>
+  <picture class="scene"><source media="(max-width:899px)" srcset="img/close/m.webp" width="1170" height="900"><img src="img/close/d.webp" width="2880" height="800" alt="" loading="lazy"></picture>
+  <div class="copy">
+    <h2 id="closeq">Who would you hire first?</h2>
+    <div class="go"><a class="btn lg" href="book.html">Book a free audit</a></div>
+  </div>
+</section>
+<footer class="foot band">
+  <div class="in">
+    <a class="logo" href="index.html" aria-label="GASP! Essential home"><img src="img/logo-orange.svg" alt="" width="89" height="30" loading="lazy"></a>
+    <div class="who"><b>Tyler Fitton</b><br>Creative Director, GASP! Essential · St. Louis</div>
+    <nav aria-label="Footer"><a href="services.html">Services</a><a href="products.html">Products</a><a href="about.html">About</a><a href="mailto:tyler.fitton@gaspessential.com">Email</a><a href="https://www.linkedin.com/company/gasp-essential" target="_blank" rel="noopener">LinkedIn</a></nav>
+  </div>
+  <div class="legal"><span>© 2026 GASP! Essential LLC · Missouri LLC est. April 2026 · St. Louis</span><a href="privacy.html">Privacy</a></div>
+</footer>
+<script src="js/site.js" defer></script>
 </body>
 </html>
