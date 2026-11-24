@@ -47,7 +47,7 @@
     const g = el.parentElement, i = [...g.children].indexOf(el), cols = getComputedStyle(g).gridTemplateColumns.split(" ").length || 1;
     return { el, lag: (i % cols) * .12 + Math.floor(i / cols) * .04, v: -1 };
   });
-  const depths = $$(".depth").map(s => ({ s, q: s.querySelector(".q"), big: s.querySelector(".big") }));
+  const depths = $$(".depth").map(s => ({ s, q: s.querySelector(".q"), big: s.querySelector(".big"), src: s.querySelector(".src") }));
   const frame = () => {
     const vh = innerHeight;
     if (!phone.matches) for (const f of flyers) {
@@ -64,6 +64,7 @@
       const a = ease(clamp(p / .35)), b = ease(clamp((p - .3) / .45)), out = clamp((p - .88) / .12);
       if (o.q) { o.q.style.opacity = (a * (1 - b * .55) * (1 - out)).toFixed(3); o.q.style.transform = `translateZ(${((1 - a) * -400 + b * 120).toFixed(1)}px)`; }
       if (o.big) { o.big.style.opacity = (b * (1 - out)).toFixed(3); o.big.style.transform = `translateZ(${((1 - b) * -2200 + out * 500).toFixed(1)}px) rotateX(${((1 - b) * 22).toFixed(2)}deg)`; }
+      if (o.src) o.src.style.opacity = (b * (1 - out)).toFixed(3);
     }
     requestAnimationFrame(frame);
   };

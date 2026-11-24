@@ -244,7 +244,37 @@ a.card:focus-visible{outline-offset:4px}
 .street .hit{pointer-events:auto}
 #street{left:0;top:32.375rem;width:90rem}
 #street-m{display:none}
+/* rungs: the ladder from the one-pager, each step a little higher than the last */
+.steps.rungs{border:0;align-items:stretch;gap:0}
+.steps.rungs li{padding:0;border:0;border-top:1px solid var(--ink);border-left:1px solid var(--hair)}
+.steps.rungs li:nth-child(1){margin-top:12rem}.steps.rungs li:nth-child(2){margin-top:9rem}.steps.rungs li:nth-child(3){margin-top:6rem}.steps.rungs li:nth-child(4){margin-top:3rem}
+.steps.rungs li::before{padding:1.75rem 1.5rem 0}
+.steps.rungs a{display:block;height:100%;padding:0 1.5rem 2.125rem;color:inherit;text-decoration:none}
+.steps.rungs a b{transition:color .2s var(--out)}
+@media (hover:hover){.steps.rungs a:hover b{color:var(--or)}}
+.steps.rungs a:focus-visible{outline-offset:-2px}
+.depth .src{margin-top:2rem;font:400 0.75rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.head.small{padding-top:2rem;padding-bottom:2.25rem}
+.head.small h2{font-size:3rem}
+.lanes{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--hair);border-left:1px solid var(--hair)}
+.lanes li{border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);font:400 1rem/1.4 var(--text);color:var(--body)}
+.lanes a,.lanes div{display:block;padding:1.5rem 1.5rem 1.75rem;color:inherit;text-decoration:none}
+.lanes b{display:block;font:300 1.625rem/1 var(--serif);letter-spacing:-.015em;color:var(--ink);margin-bottom:0.5rem;transition:color .2s var(--out)}
+.lanes p{margin-top:0.625rem}
+@media (hover:hover){.lanes a:hover b{color:var(--or)}}
+.lanes a:focus-visible{outline-offset:-2px}
+.pillars{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--hair);border-left:1px solid var(--hair)}
+.pillars li{padding:1.75rem 1.5rem 2.125rem;border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);font:400 1rem/1.45 var(--text);color:var(--body)}
+.pillars b{display:block;font:300 1.875rem/1 var(--serif);letter-spacing:-.015em;color:var(--ink);margin-bottom:0.75rem}
 @media (max-width:899px){
+  .steps.rungs li{margin-top:0!important;border-left:0;border-top:1px solid var(--hair)}
+  .steps.rungs li:first-child{border-top-color:var(--ink)}
+  .steps.rungs li::before{padding:1.125rem 0 0 1.25rem}
+  .steps.rungs a{padding:1.125rem 1.25rem 1.25rem 0}
+  .head.small{padding-top:1rem;padding-bottom:1.5rem}
+  .head.small h2{font-size:2.25rem}
+  .lanes,.pillars{grid-template-columns:1fr}
+  .depth .src{margin-top:1.25rem;font-size:0.6875rem}
   html{font-size:calc(100vw / 390 * 16)}
   body{font-size:1.0625rem}
   .band::before,.rail.l{left:0.75rem}

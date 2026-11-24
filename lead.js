@@ -51,7 +51,7 @@
     shuttle.style.setProperty("--n", days.length);
     const blk = el("i", "blk"); blk.setAttribute("aria-hidden", "true"); shuttle.appendChild(blk);
     const times = el("div", "times");
-    const note = el("p", "tz mono", "Central time · 15 minutes");
+    const note = el("p", "tz mono", `Central time · ${page === "audit" ? 15 : 30} minutes`);
     const tabs = days.map((d, i) => {
       const b = el("button"); b.type = "button"; b.setAttribute("role", "radio");
       b.append(el("span", "", dayTab.format(d[0])), el("b", "", dayNum.format(d[0])));

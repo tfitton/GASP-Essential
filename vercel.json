@@ -1,6 +1,24 @@
 {
   "rewrites": [
-    { "source": "/audit", "destination": "/audit.html" },
-    { "source": "/audit/", "destination": "/audit.html" }
+    {
+      "source": "/audit",
+      "destination": "/audit.html"
+    },
+    {
+      "source": "/audit/",
+      "destination": "/audit.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/products",
+      "destination": "/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/products.html",
+      "destination": "/services.html",
+      "permanent": true
+    }
   ]
 }

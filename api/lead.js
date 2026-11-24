@@ -115,7 +115,7 @@ async function sendMail(lead) {
     `${lead.name} · ${lead.company}`,
     `${lead.email}${lead.phone ? " · " + lead.phone : ""}`,
     `Team size: ${lead.size || "n/a"}${qualified ? " (in ICP)" : ""}`,
-    `Eats their week: ${lead.pain || "n/a"}`,
+    `Where they want to start: ${lead.pain || "n/a"}`,
     `Page: ${lead.page || "site"}`,
     `Source URL: ${lead.url || "n/a"}`,
     "",

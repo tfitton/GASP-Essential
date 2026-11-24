@@ -8,7 +8,8 @@ const crypto = require("crypto");
 const env = k => (process.env[k] || "").trim();
 const T = () => AbortSignal.timeout(4000); // token + schedule stay well inside the function limit
 const TZ = "America/Chicago";
-const STEP = 30, LEN = 15;             // offer :00 and :30 starts, 15-minute audit
+const STEP = 30;                       // offer :00 and :30 starts
+const isAudit = lead => lead.p === "audit"; // /audit books a 15-minute lead response audit; every other page a 30-minute call
 const OPEN = 9 * 60, LAST = 16 * 60 + 30; // first and last start, Central
 const DAYS = 5, NOTICE = 120;          // next 5 business days, at least 2 hours out
 const TTL = 60 * 60;                   // a booking token lives an hour
@@ -72,11 +73,11 @@ async function book(lead, iso) {
   if (isNaN(t) || t.getTime() % (STEP * 60000) || t - Date.now() < 30 * 60000 || !bookable(t)) return { taken: true };
   const token = await graphToken();
   if ((await schedule(token, t, new Date(t.getTime() + STEP * 60000)))[0] !== "0") return { taken: true };
-  const end = new Date(t.getTime() + LEN * 60000), mb = env("LEAD_MAILBOX");
+  const end = new Date(t.getTime() + (isAudit(lead) ? 15 : 30) * 60000), mb = env("LEAD_MAILBOX");
   const r = await fetch(`https://graph.microsoft.com/v1.0/users/${encodeURIComponent(mb)}/events`, {
     method: "POST", headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
     body: JSON.stringify({
-      subject: `Lead response audit · ${lead.c || lead.n}`,
+      subject: `${isAudit(lead) ? "Lead response audit" : "Discovery call"} · ${lead.c || lead.n}`,
       body: { contentType: "Text", content: [`${lead.n} · ${lead.c || "n/a"}`, lead.e, `Team size: ${lead.s || "n/a"}`, `Booked from gaspessential.com/${lead.p || "audit"}`].join("\n") },
       start: { dateTime: t.toISOString().slice(0, 19), timeZone: "UTC" }, end: { dateTime: end.toISOString().slice(0, 19), timeZone: "UTC" },
       attendees: [{ emailAddress: { address: lead.e, name: lead.n }, type: "required" }],
